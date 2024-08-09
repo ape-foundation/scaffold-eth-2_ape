@@ -7,7 +7,7 @@ const ConnectWallet = () => {
   const { address, isConnected } = useAccount();
 
   useEffect(() => {
-    console.log("Available connectors:", connectors); // Debug to see what connectors are loaded
+    console.log("Available connectors:", connectors); 
   }, [connectors]);
 
   if (isConnected) {
@@ -21,7 +21,7 @@ const ConnectWallet = () => {
     );
   }
 
-  // Filter to remove duplicates based on the name property
+  
   const uniqueConnectors = connectors.filter((connector, index, self) =>
     index === self.findIndex(t => t.name === connector.name)
   );

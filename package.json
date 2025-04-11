@@ -2,45 +2,42 @@
   "name": "se-2",
   "version": "0.0.1",
   "private": true,
-  "workspaces": {
-    "packages": [
-      "packages/hardhat",
-      "packages/nextjs"
-    ]
-  },
+  "workspaces": [
+    "packages/hardhat",
+    "packages/nextjs"
+  ],
   "scripts": {
-    "account": "yarn workspace @se-2/hardhat account",
-    "chain": "yarn workspace @se-2/hardhat chain",
-    "fork": "yarn workspace @se-2/hardhat fork",
-    "deploy": "yarn workspace @se-2/hardhat deploy",
-    "verify": "yarn workspace @se-2/hardhat verify",
-    "hardhat-verify": "yarn workspace @se-2/hardhat hardhat-verify",
-    "compile": "yarn workspace @se-2/hardhat compile",
-    "generate": "yarn workspace @se-2/hardhat generate",
-    "flatten": "yarn workspace @se-2/hardhat flatten",
-    "hardhat:lint": "yarn workspace @se-2/hardhat lint",
-    "hardhat:lint-staged": "yarn workspace @se-2/hardhat lint-staged",
-    "hardhat:format": "yarn workspace @se-2/hardhat format",
-    "hardhat:test": "yarn workspace @se-2/hardhat test",
-    "test": "yarn hardhat:test",
-    "format": "yarn next:format && yarn hardhat:format",
-    "start": "yarn workspace @se-2/nextjs dev",
-    "next:lint": "yarn workspace @se-2/nextjs lint",
-    "next:format": "yarn workspace @se-2/nextjs format",
-    "next:check-types": "yarn workspace @se-2/nextjs check-types",
-    "next:build": "yarn workspace @se-2/nextjs build",
-    "next:serve": "yarn workspace @se-2/nextjs serve",
+    "account": "cd packages/hardhat && npm run account",
+    "chain": "cd packages/hardhat && npm run chain",
+    "fork": "cd packages/hardhat && npm run fork",
+    "deploy": "cd packages/hardhat && npm run deploy",
+    "verify": "cd packages/hardhat && npm run verify",
+    "hardhat-verify": "cd packages/hardhat && npm run hardhat-verify",
+    "compile": "cd packages/hardhat && npm run compile",
+    "generate": "cd packages/hardhat && npm run generate",
+    "flatten": "cd packages/hardhat && npm run flatten",
+    "hardhat:lint": "cd packages/hardhat && npm run lint",
+    "hardhat:lint-staged": "cd packages/hardhat && npm run lint-staged",
+    "hardhat:format": "cd packages/hardhat && npm run format",
+    "hardhat:test": "cd packages/hardhat && npm run test",
+    "test": "npm run hardhat:test",
+    "format": "npm run next:format && npm run hardhat:format",
+    "start": "cd packages/nextjs && npm run dev",
+    "next:lint": "cd packages/nextjs && npm run lint",
+    "next:format": "cd packages/nextjs && npm run format",
+    "next:check-types": "cd packages/nextjs && npm run check-types",
+    "next:build": "cd packages/nextjs && npm run build",
+    "next:serve": "cd packages/nextjs && npm run serve",
     "postinstall": "husky install",
     "precommit": "lint-staged",
-    "vercel": "yarn workspace @se-2/nextjs vercel",
-    "vercel:yolo": "yarn workspace @se-2/nextjs vercel:yolo"
+    "vercel": "cd packages/nextjs && npm run vercel",
+    "vercel:yolo": "cd packages/nextjs && npm run vercel:yolo"
   },
-  "packageManager": "yarn@3.2.3",
   "devDependencies": {
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3"
   },
   "engines": {
-    "node": ">=18.17.0"
+    "node": ">=22.0.0"
   }
 }

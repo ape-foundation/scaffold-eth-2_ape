@@ -35,6 +35,7 @@ To get started with Scaffold-ETH 2, follow the steps below:
 
 ```
 git clone https://github.com/ape-foundation/scaffold-eth-2_ape.git
+cd scaffold-eth-2_ape
 ```
 
 2. Install packages (Yarn or pnpm):
